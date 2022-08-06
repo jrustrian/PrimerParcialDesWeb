@@ -7,5 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class customer extends Model
 {
-    use HasFactory;
+    protected $table='customer';
+    public $timestamps=false;
+    protected $fillable=[
+        'id', 'name','address','cell_pone','email', 'customer_type'
+    ];
+
+    protected $primaryKey='id';
 }

@@ -7,5 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class customer_type extends Model
 {
-    use HasFactory;
+    protected $table='customer_type';
+    public $timestamps=true;
+    protected $fillable=[
+        'id', 'description'
+    ];
+
+    protected $primaryKey='id';
 }
