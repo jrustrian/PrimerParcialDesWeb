@@ -30,7 +30,7 @@
 
         <div class="form-group">
             <label for="email">Correo electronico</label>
-            <input type="number" class="form-control {{$errors->has('email')? 'is-invalid':''}}" name="email" id="emial"
+            <input type="text" class="form-control {{$errors->has('email')? 'is-invalid':''}}" name="email" id="emial"
                    value="{{isset($customer->email)?$customer->email:old('email') }}">
         </div>
 

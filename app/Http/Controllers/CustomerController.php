@@ -6,14 +6,15 @@ use App\Models\customer;
 use App\Models\customer_type;
 use Illuminate\Http\Request;
 use Session;
+use Illuminate\Support\Facades\DB;
 
 class CustomerController extends Controller
 {
  public function create()
     {
 
-        $customer_types = customer_type::all();
-        return view("Customer.create", compact('customer_types'));
+        $customers_types = customer_type::all();
+        return view("Customer.create", compact('customers_types'));
     }
 
     public function index()
