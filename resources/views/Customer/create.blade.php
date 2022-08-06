@@ -23,19 +23,25 @@
 
 
         <div class="form-group">
-            <label for="phone_number">Numero de Telefono</label>
-            <input type="number" class="form-control {{$errors->has('phone_number')? 'is-invalid':''}}" name="phone_number" id="phone_number"
-                   value="{{isset($customer->phone_number)?$customer->phone_number:old('phone_number') }}">
+            <label for="cell_pone">Numero de Telefono</label>
+            <input type="number" class="form-control {{$errors->has('cell_pone')? 'is-invalid':''}}" name="cell_pone" id="cell_pone"
+                   value="{{isset($customer->cell_pone)?$customer->cell_pone:old('cell_pone') }}">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Correo electronico</label>
+            <input type="number" class="form-control {{$errors->has('email')? 'is-invalid':''}}" name="email" id="emial"
+                   value="{{isset($customer->email)?$customer->email:old('email') }}">
         </div>
 
         <div class="form-group hidden">
-            <label for="name">Categoria</label>
-            <select name="category_id" id="category_id" class="form-control form-control-lg"
-                    value="{{isset($customer->category_id)?$customer->category_id:old('category_id') }}">
+            <label for="name">Tipo de cliente</label>
+            <select name="customer_type" id="customer_type" class="form-control form-control-lg"
+                    value="{{isset($customer->customer_type)?$customer->customer_type:old('customer_type') }}">
                 <option selected>selecione</option>
-                @foreach ($categorys as $category)
+                @foreach ($customers_types as $customer_type)
 
-                    <option value="{{ $category->id_category }}">{{ $category->description }}</option>
+                    <option value="{{ $customer_type->id }}">{{ $customer_type->description }}</option>
 
                 @endforeach
 
